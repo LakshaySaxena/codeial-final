@@ -5,11 +5,11 @@ export function fetchPosts() {
     const url = 'https://codeial.codingninjas.com:8000/api/v2/posts?page=1&limit=5';
     fetch(url)
       .then((response) => {
-       return response.json();
+        return response.json();
       })
       .then((data) => {
         console.log(data);
-dispatch(updatePosts(data.data.posts));
+        dispatch(updatePosts(data.data.posts));
       });
   };
 }
