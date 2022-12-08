@@ -1,9 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/posts';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import propType from 'prop-types';
-import {PostsList,Navbar}from './index';
+import {Navbar,Home,Page404}from './';
+
+
+const Login = () => <div>Login</div>;
+
+const Signup = () => <div>Signup</div>;
+
+
+
 
 class App extends React.Component {
   componentDidMount() {
@@ -12,12 +20,21 @@ class App extends React.Component {
   render() {
     const { posts } = this.props;
     return (
-      
+      <Router>
       <div>
         <Navbar/>
-        <PostsList posts={posts} />
+        {/* <PostsList posts={posts} /> */}
+       
+          <Switch>
+          <Route exact path="/" render={() => {
+                return <Home posts={posts} />;}}/>
+
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route component={Page404} />
+          </Switch>
       </div>
-      
+      </Router>
     );
   }
 }
