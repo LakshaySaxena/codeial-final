@@ -3,10 +3,8 @@ import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/posts';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import propType from 'prop-types';
-import {Navbar,Home,Page404}from './';
+import {Navbar,Home,Page404,Login}from './';
 
-
-const Login = () => <div>Login</div>;
 
 const Signup = () => <div>Signup</div>;
 
