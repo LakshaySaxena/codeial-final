@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import propType from 'prop-types';
+import PropTypes from 'prop-types';
 
 class PostsList extends Component {
   render() {
@@ -11,7 +11,7 @@ class PostsList extends Component {
             <div className="post-header">
               <div className="post-avatar">
                 <img
-                  src="	https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
+                  src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png"
                   alt="user-pic"
                 />
                 <div>
@@ -61,7 +61,8 @@ class PostsList extends Component {
   }
 }
 
-PostsList.propType={
-  posts: propType.string.isRequired,
-}
+PostsList.propTypes = {
+  posts: PropTypes.array.isRequired,
+};
+
 export default PostsList;
